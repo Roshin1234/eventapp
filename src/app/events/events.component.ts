@@ -17,15 +17,19 @@ export class EventsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getEvent()
-    
+
 
   }
   getEvent(){
     this.data.geteventList().subscribe((data:any)=>{
        this.Event=data
       console.log("Events data",Event)
+      this.route.navigateByUrl('/events')
     })
   }
+
+
+
   deleteEvent(id:any){
     if(confirm('Are you sure you want to delete this employee'))
      this.http.delete('http://localhost:3000/api/'+id).subscribe(data=>{
@@ -33,6 +37,7 @@ export class EventsComponent implements OnInit {
         this.http.post('http://localhost:3000/api/deleteadd',data).subscribe(data=>{
           if(data){
             console.log("hi",data)
+            window.location.reload()
           }
         })
     },err=>{

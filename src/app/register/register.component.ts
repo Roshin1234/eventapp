@@ -31,6 +31,7 @@ export class RegisterComponent implements OnInit {
       this.data.register(userId,email,password,date_of_birth).subscribe((data:any)=>{
         if(data){
           console.log("data",data)
+        localStorage.setItem('userId',userId)
           alert(data.message)
           this.route.navigateByUrl('/login')
         }

@@ -18,9 +18,13 @@ export class HomeComponent implements OnInit {
     Priority:['']
    
   })
+  userId:any
+
   constructor( private EF:FormBuilder,private data:DatabaseService,private route:Router) { }
   
   ngOnInit(): void {
+    this.userId=localStorage.getItem('userId')
+
   }
 
   Event(){
@@ -34,7 +38,8 @@ export class HomeComponent implements OnInit {
       this.data.event(eventName,eventDate,userId,Priority).subscribe((data:any)=>{
         if(data){
           console.log("event datas",data)
-          // this.route.navigateByUrl('event-delete')
+          window.location.reload()
+          //  this.route.navigateByUrl('/events')
           this.show=false
         }
       },(data)=>{
