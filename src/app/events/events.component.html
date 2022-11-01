@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/home">EVENT APP</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" routerLink="/events">Added Events</a>
+        <a class="nav-link active" routerLink="/deleteevent">Deleted Events</a>
+        <a class="nav-link" routerLink="/login">Logout</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<section class="container" >
+    <div class="row mt-4 p-3 ">
+    <div class="card col-md-3 me-4 mb-3" *ngFor="let item of Event" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{item.eventName}}</h5>
+          <h5>{{item.eventDate}}</h5>
+          <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal"
+          data-bs-whatever="@mdo" (click)="deleteEvent(item._id)">Delete</button>
+        </div>
+      </div>
+    </div>
+
+
+    
+</section>
+
+

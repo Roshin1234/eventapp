@@ -1,0 +1,23 @@
+#addbtn{
+    
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    outline:none;
+    
+}
+
+.main{
+    position:relative;
+    left: 80%;
+    background-color: aqua;
+    
+    
+    
+}
+.modal{
+    background-color: rgb(110, 231, 231);
+}
+.modal-body{
+    background-color: beige;
+}
